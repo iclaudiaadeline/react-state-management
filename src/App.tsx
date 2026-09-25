@@ -1,3 +1,5 @@
+import { ThemeProvider } from './context/ThemeContext'
+import Navbar from './components/Navbar'
 import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
@@ -8,7 +10,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+
+    <ThemeProvider>
+     <Navbar />
+     <>
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -116,6 +121,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
+     </ThemeProvider>
   )
 }
 
